@@ -20,7 +20,7 @@ public class FlowerSpawner : MonoBehaviour
         {
             // Spawn the flower prefab at a random position within the spawn radius
             Vector3 spawnPosition = transform.position + Random.insideUnitSphere * spawnRadius;
-            spawnPosition.y = 0.5f; // Ensure the flower is spawned at floor level
+            spawnPosition.y = 0.01f; // Ensure the flower is spawned at floor level
             Instantiate(flowerPrefab, spawnPosition, Quaternion.identity);
 
             // Wait for the next spawn interval

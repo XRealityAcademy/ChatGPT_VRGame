@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Rehearsal/0.3_ControllerUI.unity
-    guid: 72b7826da76322c47894ca3d973e0b11
+    path: Assets/Scenes/Live Demo/2.0 ChangeAssets.unity
+    guid: cd1e072664ab49f4aa4e7a20c5a3a562
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 76915b412e803364888d5bb613beeb71, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 311969d2b57d8ef4cb55dd69a7abdb0f, type: 2}
