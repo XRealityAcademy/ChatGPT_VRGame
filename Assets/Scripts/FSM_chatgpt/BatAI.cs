@@ -24,6 +24,10 @@ public class BatAI : MonoBehaviour
     // Attack damage of the bat
     public int damage = 1;
 
+    public float attackRate = 2f;
+
+    private float lastAttack = 0f;
+
     // Time it takes for the bat to recover after being injured
     public float recoveryTime = 1f;
 
@@ -62,7 +66,12 @@ public class BatAI : MonoBehaviour
     // Idle state: bat stays in place and does nothing
     void Idle()
     {
-        // Do nothing
+        // Calculate distance to player
+        float distance = Vector3.Distance(transform.position, playerTransform.position);
+        if(distance < followDistance)
+        {
+            currentState = BatState.Follow;
+        }
     }
 
     // Follow state: bat follows the player
@@ -101,9 +110,10 @@ public class BatAI : MonoBehaviour
             currentState = BatState.Follow;
         }
         // Damage the player
-        else
+        else if(Time.time > lastAttack + attackRate)
         {
-            //*** playerTransform.GetComponent<PlayerHealth>().TakeDamage(damage);
+            lastAttack = Time.time;
+            playerTransform.GetComponent<CharacterHealth>().TakeDamage(damage);
         }
     }
 
@@ -136,7 +146,7 @@ public class BatAI : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // Subtract damage from health
-        //***  health -= damage;
+          health -= damage;
 
         // If health is zero or less, switch to In
     }
