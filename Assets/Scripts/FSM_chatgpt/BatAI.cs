@@ -1,13 +1,18 @@
 
+using System;
 using UnityEngine;
 
 public class BatAI : MonoBehaviour
 {
     public enum BatState { Idle, Follow, Attack, Injured, Death }
     public BatState currentState;
+    public Action<int> BatTookDamage;
+   
 
     // Reference to the player's transform
     private Transform playerTransform;
+    private Animator anim;
+    private GameObject bat;
 
     // Distance at which the bat will start following the player
     public float followDistance = 10f;
@@ -24,7 +29,8 @@ public class BatAI : MonoBehaviour
     // Attack damage of the bat
     public int damage = 1;
 
-    public float attackRate = 2f;
+    public float attackRate = 10f;
+    public bool isInjured;
 
     private float lastAttack = 0f;
 
@@ -36,12 +42,17 @@ public class BatAI : MonoBehaviour
 
     void Start()
     {
+        isInjured = false;
+        bat = this.gameObject;
         // Find the player's transform
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
+
+
         // State machine update
         switch (currentState)
         {
@@ -61,22 +72,28 @@ public class BatAI : MonoBehaviour
                 Death();
                 break;
         }
+
+        //if the bat collide with the bullet, then the bat will go to the injure state
+        
     }
 
     // Idle state: bat stays in place and does nothing
     void Idle()
     {
+       // isInjured = false;
         // Calculate distance to player
         float distance = Vector3.Distance(transform.position, playerTransform.position);
         if(distance < followDistance)
         {
             currentState = BatState.Follow;
+            anim.SetBool("isIdle", true);
         }
     }
 
     // Follow state: bat follows the player
     void Follow()
     {
+      //  isInjured = false;
         // Calculate distance to player
         float distance = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -95,12 +112,27 @@ public class BatAI : MonoBehaviour
         {
             transform.LookAt(playerTransform);
             transform.position += transform.forward * speed * Time.deltaTime;
+            anim.SetBool("isFollow", true);
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        //Pass the "amount" to Invoke
+        //CharacterTookDamage? => check if this is "null" => if(CharacterTookDamage!=null)
+        BatTookDamage?.Invoke(amount);
+        health -= amount;
+        currentState = BatState.Injured;
+        if (health <= 0)
+        {
+            Death();
         }
     }
 
     // Attack state: bat attacks the player
     void Attack()
     {
+
         // Calculate distance to player
         float distance = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -108,20 +140,30 @@ public class BatAI : MonoBehaviour
         if (distance > attackDistance)
         {
             currentState = BatState.Follow;
-        }
-        // Damage the player
-        else if(Time.time > lastAttack + attackRate)
+        } 
+
+        else if (Time.time > lastAttack + attackRate)
         {
             lastAttack = Time.time;
-            playerTransform.GetComponent<CharacterHealth>().TakeDamage(damage);
+            anim.SetBool("isAttack", true);
+            playerTransform.GetComponent<Player>().TakeDamage(damage);
         }
+
+
+        // Damage the player
+
+
+
     }
 
     // Injured state: bat is temporarily unable to do anything
-    void Injured()
+    public void Injured()
     {
         // Wait for recovery time to pass
+        anim.SetBool("isInjure", true);
         recoveryTimer -= Time.deltaTime;
+
+
         if (recoveryTimer <= 0)
         {
             // If health is zero, switch to Death state, otherwise switch to Follow state
@@ -132,22 +174,32 @@ public class BatAI : MonoBehaviour
             else
             {
                 currentState = BatState.Follow;
+                isInjured = !isInjured;
             }
         }
     }
+    // if the bat got shot by a bullet
+ /*     public void OnTriggerEnter(Collider other)
+   {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            isInjured = true;
+            currentState = BatState.Injured;
+           // this.TakeDamage(int amout);
+            FlowerInventory.instance.DecreaseFlowerCount();
+            //Destroy(other);
+            Debug.Log("a bat being hit");
+        }
+    }*/
 
     // Death state: bat dies and is destroyed
     void Death()
     {
+        anim.SetBool("isDie", true);
+
         Destroy(gameObject);
     }
 
     // Function to handle taking damage
-    public void TakeDamage(int damage)
-    {
-        // Subtract damage from health
-          health -= damage;
-
-        // If health is zero or less, switch to In
-    }
+    
 }

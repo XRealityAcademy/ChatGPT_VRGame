@@ -7,6 +7,8 @@ TagManager:
   - Flower
   - Bucket
   - Hand
+  - Bat
+  - Bullet
   layers:
   - Default
   - TransparentFX

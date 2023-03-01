@@ -27,6 +27,12 @@ public class FlowerInventory : MonoBehaviour
         UpdateInventoryUI();
     }
 
+    public void DecreaseFlowerCount()
+    {
+        flowerCount--;
+        UpdateInventoryUI();
+    }
+
     private void UpdateInventoryUI()
     {
         flowerCountText.text = flowerCount.ToString();
