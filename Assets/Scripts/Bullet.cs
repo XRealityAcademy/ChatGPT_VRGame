@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
     {
         
     }
-
+    //The first bat dies, and the following bats are never die
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bat"))
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
             bat.GetComponent<BatAI>().currentState = BatState.Injured;
 
             Debug.Log("a bullet being shot");
-            Destroy(bullet);
+            Destroy(this.gameObject);
         }
     }
 }

@@ -35,7 +35,7 @@ public class BatAI : MonoBehaviour
     private float lastAttack = 0f;
 
     // Time it takes for the bat to recover after being injured
-    public float recoveryTime = 1f;
+    public float recoveryTime = 10f;
 
     // Timer to keep track of recovery time
     private float recoveryTimer;
@@ -149,6 +149,7 @@ public class BatAI : MonoBehaviour
             playerTransform.GetComponent<Player>().TakeDamage(damage);
         }
 
+        
 
         // Damage the player
 
