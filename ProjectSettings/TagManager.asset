@@ -9,6 +9,7 @@ TagManager:
   - Hand
   - Bat
   - Bullet
+  - Gnome
   layers:
   - Default
   - TransparentFX
