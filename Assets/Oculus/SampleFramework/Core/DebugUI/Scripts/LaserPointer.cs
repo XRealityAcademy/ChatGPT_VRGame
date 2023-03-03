@@ -27,6 +27,8 @@ using System;
 
 public class LaserPointer : OVRCursor
 {
+    
+    public event Action<bool> OnStateChanged;
     public enum LaserBeamBehavior
     {
         On,        // laser beam always on
@@ -131,6 +133,8 @@ public class LaserPointer : OVRCursor
                 if (!lineRenderer.enabled)
                 {
                     lineRenderer.enabled = true;
+                    //check if the event is null, if not, then turn bool=true
+                    OnStateChanged?.Invoke(true);
                     lineRenderer.SetPosition(0, start);
                     lineRenderer.SetPosition(1, end);
                 }
@@ -140,6 +144,7 @@ public class LaserPointer : OVRCursor
                 if (lineRenderer.enabled)
                 {
                     lineRenderer.enabled = false;
+                    OnStateChanged?.Invoke(false);
                 }
             }
         }

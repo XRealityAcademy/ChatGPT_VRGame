@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+[DefaultExecutionOrder(5)]
 public class Player : MonoBehaviour
 {
     //Action is an event
@@ -13,6 +16,7 @@ public class Player : MonoBehaviour
     public Transform batTransform;
     public int bulletPower=1;
     private OVRInput.Controller controller; // The Quest 2 controller being used
+    public GameObject CircleUI;
 
     [field:SerializeField]
     public int Health { get; private set; }
@@ -20,34 +24,63 @@ public class Player : MonoBehaviour
     [field: SerializeField]
     public int MaxHealth { get; private set; }
 
+    private LaserPointer laserPointer;
+    private bool isLookingAtUi;
+
     void Start()
     {
         controller = OVRInput.Controller.RTouch;
+        laserPointer = FindObjectOfType<LaserPointer>();
+        laserPointer.OnStateChanged += OnLookingAtUi;
+    }
+
+    private void OnLookingAtUi(bool isLooking)
+    {
+        isLookingAtUi = isLooking;
     }
 
     void Update()
     {
         // Check if the index trigger on the controller is pressed down
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controller))
-        {
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, controller) && !isLookingAtUi)
+        { 
             Shoot();
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.Three))
+        {
+            Circle();
         }
     }
 
     void Shoot()
     {
         // Spawn a new bullet object at the bullet spawn point
-        GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+      /*  GameObject newBullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         // Get the rigidbody component of the bullet object
         Rigidbody bulletRigidbody = newBullet.GetComponent<Rigidbody>();
 
         // Add force to the bullet in the forward direction
-        bulletRigidbody.AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange);
+        bulletRigidbody.AddForce(transform.forward * bulletSpeed, ForceMode.VelocityChange); */
+
+        GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        rb.velocity = bulletSpawnPoint.forward * bulletSpeed;
+        Destroy(bullet, 5f);
 
 
 
     }
+
+
+    public void Circle()
+    {
+        CircleUI.SetActive(!CircleUI.activeSelf);
+        Debug.Log("CicleUI active");
+    }
+   
+
 
 
 

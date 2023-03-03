@@ -6,17 +6,19 @@ using static BatAI;
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
-    private GameObject bullet;
+    //private GameObject bullet;
     public int damage = 1;
-    public GameObject bat;
+    public GameObject Gnome;
+    public GameObject Bat;
     public bool hit;
 
     // Start is called before the first frame update
     void Start()
     {
-        bullet = this.gameObject;
-        bat = GameObject.FindWithTag("Bat");
-        hit = bat.GetComponent<BatAI>().isInjured;
+       // bullet = this.gameObject;
+        Gnome = GameObject.FindWithTag("Gnome");
+        Bat = GameObject.FindWithTag("Bat");
+        hit = Gnome.GetComponent<BatAI>().isInjured;
 
     }
 
@@ -25,17 +27,17 @@ public class Bullet : MonoBehaviour
     {
         
     }
-    //The first bat dies, and the following bats are never die
+    //The first Gnome dies, and the following bats are never die
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bat"))
         {
             hit = true;
-            //take bat's dammage
-            bat.GetComponent<BatAI>().TakeDamage(damage);
+            //take Gnome's dammage
+            Bat.GetComponent<BatAI>().TakeDamage(damage);
             FlowerInventory.instance.DecreaseFlowerCount();
-            
-            bat.GetComponent<BatAI>().currentState = BatState.Injured;
+
+            Bat.GetComponent<BatAI>().currentState = BatState.Injured;
 
             Debug.Log("a bullet being shot");
             Destroy(this.gameObject);

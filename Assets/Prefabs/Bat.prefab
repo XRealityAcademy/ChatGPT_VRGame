@@ -232,7 +232,7 @@ MonoBehaviour:
   speed: 5
   health: 3
   damage: 1
-  attackRate: 2
+  attackRate: 3
   isInjured: 0
   recoveryTime: 1
 --- !u!1 &9043807862860107326
@@ -673,8 +673,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4952009, y: 0.5240762, z: 0.660508}
-  m_Center: {x: -0.000000085677016, y: 0.11203382, z: 0.19359437}
+  m_Size: {x: 1.4952009, y: 0.7627484, z: 0.660508}
+  m_Center: {x: -0.00000006287513, y: -0.0073013683, z: 0.19359437}
 --- !u!1 &9044335697290855576
 GameObject:
   m_ObjectHideFlags: 0

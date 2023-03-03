@@ -12,21 +12,21 @@ public class BatAI : MonoBehaviour
     // Reference to the player's transform
     private Transform playerTransform;
     private Animator anim;
-    private GameObject bat;
+    private GameObject Gnome;
 
-    // Distance at which the bat will start following the player
+    // Distance at which the Gnome will start following the player
     public float followDistance = 10f;
 
-    // Distance at which the bat will start attacking the player
+    // Distance at which the Gnome will start attacking the player
     public float attackDistance = 2f;
 
-    // Bat's movement speed
+    // Gnome's movement speed
     public float speed = 5f;
 
-    // Health points of the bat
+    // Health points of the Gnome
     public int health = 3;
 
-    // Attack damage of the bat
+    // Attack damage of the Gnome
     public int damage = 1;
 
     public float attackRate = 10f;
@@ -34,7 +34,7 @@ public class BatAI : MonoBehaviour
 
     private float lastAttack = 0f;
 
-    // Time it takes for the bat to recover after being injured
+    // Time it takes for the Gnome to recover after being injured
     public float recoveryTime = 10f;
 
     // Timer to keep track of recovery time
@@ -43,7 +43,7 @@ public class BatAI : MonoBehaviour
     void Start()
     {
         isInjured = false;
-        bat = this.gameObject;
+        Gnome = this.gameObject;
         // Find the player's transform
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         anim = GetComponent<Animator>();
@@ -73,11 +73,11 @@ public class BatAI : MonoBehaviour
                 break;
         }
 
-        //if the bat collide with the bullet, then the bat will go to the injure state
+        //if the Gnome collide with the bullet, then the Gnome will go to the injure state
         
     }
 
-    // Idle state: bat stays in place and does nothing
+    // Idle state: Gnome stays in place and does nothing
     void Idle()
     {
        // isInjured = false;
@@ -90,7 +90,7 @@ public class BatAI : MonoBehaviour
         }
     }
 
-    // Follow state: bat follows the player
+    // Follow state: Gnome follows the player
     void Follow()
     {
       //  isInjured = false;
@@ -129,7 +129,7 @@ public class BatAI : MonoBehaviour
         }
     }
 
-    // Attack state: bat attacks the player
+    // Attack state: Gnome attacks the player
     void Attack()
     {
 
@@ -157,7 +157,7 @@ public class BatAI : MonoBehaviour
 
     }
 
-    // Injured state: bat is temporarily unable to do anything
+    // Injured state: Gnome is temporarily unable to do anything
     public void Injured()
     {
         // Wait for recovery time to pass
@@ -179,7 +179,7 @@ public class BatAI : MonoBehaviour
             }
         }
     }
-    // if the bat got shot by a bullet
+    // if the Gnome got shot by a bullet
  /*     public void OnTriggerEnter(Collider other)
    {
         if (other.gameObject.CompareTag("Bullet"))
@@ -189,11 +189,11 @@ public class BatAI : MonoBehaviour
            // this.TakeDamage(int amout);
             FlowerInventory.instance.DecreaseFlowerCount();
             //Destroy(other);
-            Debug.Log("a bat being hit");
+            Debug.Log("a Gnome being hit");
         }
     }*/
 
-    // Death state: bat dies and is destroyed
+    // Death state: Gnome dies and is destroyed
     void Death()
     {
         anim.SetBool("isDie", true);
