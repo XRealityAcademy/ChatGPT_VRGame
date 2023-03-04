@@ -86,7 +86,7 @@ public class BatAI : MonoBehaviour
         if(distance < followDistance)
         {
             currentState = BatState.Follow;
-            anim.SetBool("isIdle", true);
+           // anim.SetBool("isIdle", true);
         }
     }
 
@@ -100,19 +100,25 @@ public class BatAI : MonoBehaviour
         // If player is within attack distance, switch to Attack state
         if (distance <= attackDistance)
         {
-            currentState = BatState.Attack;
+            //anim.SetBool("isIdle", false);
+          //  anim.SetBool("isFollow", false);
+            currentState = BatState.Attack; 
+
+
         }
         // If player is out of follow distance, switch to Idle state
         else if (distance > followDistance)
         {
+            anim.SetBool("isFollow", false);
             currentState = BatState.Idle;
+
         }
         // Move towards the player
         else
         {
             transform.LookAt(playerTransform);
             transform.position += transform.forward * speed * Time.deltaTime;
-            anim.SetBool("isFollow", true);
+
         }
     }
 
@@ -145,6 +151,7 @@ public class BatAI : MonoBehaviour
         else if (Time.time > lastAttack + attackRate)
         {
             lastAttack = Time.time;
+
             anim.SetBool("isAttack", true);
             playerTransform.GetComponent<Player>().TakeDamage(damage);
         }
