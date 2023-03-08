@@ -1,46 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static BatAI;
 
-public class Bullet : MonoBehaviour
+namespace ZombieFlower
 {
-    [SerializeField]
-    //private GameObject bullet;
-    public int damage = 1;
-    public GameObject Gnome;
-    public GameObject Bat;
-    public bool hit;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Bullet : MonoBehaviour
     {
-       // bullet = this.gameObject;
-        Gnome = GameObject.FindWithTag("Gnome");
-        Bat = GameObject.FindWithTag("Bat");
-        hit = Gnome.GetComponent<BatAI>().isInjured;
+        [SerializeField]
+        public int damage = 1;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    //The first Gnome dies, and the following bats are never die
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bat"))
+        private void Start()
         {
-            hit = true;
-            //take Gnome's dammage
-            Bat.GetComponent<BatAI>().TakeDamage(damage);
-            FlowerInventory.instance.DecreaseFlowerCount();
-
-            Bat.GetComponent<BatAI>().currentState = BatState.Injured;
-
-            Debug.Log("a bullet being shot");
-            Destroy(this.gameObject);
+            Invoke("RemoveBullet", 10f);
         }
+
+
+        //The first Gnome dies, and the following bats are never die
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+
+                //take Gnome's dammage
+                EnemyAI enemy = other.gameObject.GetComponentInParent<EnemyAI>();
+                enemy.TakeDamage(damage);
+                FlowerInventory.instance.DecreaseFlowerCount();
+                Debug.Log("The bullet hit " + enemy.gameObject);
+                RemoveBullet();
+            }
+
+            if (other.gameObject.CompareTag("Gnome"))
+            {
+
+                //take Gnome's dammage
+                EnemyAI enemy = other.gameObject.GetComponentInParent<EnemyAI>();
+                enemy.TakeDamage(damage);
+                FlowerInventory.instance.DecreaseFlowerCount();
+                Debug.Log("The bullet hit " + enemy.gameObject);
+                RemoveBullet();
+            }
+        }
+
+        void RemoveBullet() { Destroy(this.gameObject); }
     }
 }

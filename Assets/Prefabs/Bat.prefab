@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9045667575500442962}
   m_Layer: 0
   m_Name: RigRArmCollarbone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 9049935254765292258}
   m_Layer: 0
   m_Name: RigTail4
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 9045603240229319090}
   m_Layer: 0
   m_Name: RigRArm2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 9045968953391686702}
   m_Layer: 0
   m_Name: RigTail2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 9049477836749306382}
   m_Layer: 0
   m_Name: RigRLeg
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 8995113365077000385}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Bat
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9043805428427432050}
-  m_LocalRotation: {x: 0.10938163, y: 0.8754261, z: -0.40821788, w: -0.23456968}
+  m_LocalRotation: {x: 0.10938327, y: 0.87542564, z: -0.40822, w: -0.23456715}
   m_LocalPosition: {x: 7.414659, y: 6.0628176, z: 7.8691316}
   m_LocalScale: {x: 0.5, y: 0.49999994, z: 0.50000006}
   m_ConstrainProportionsScale: 0
@@ -193,7 +193,7 @@ Transform:
   - {fileID: 9049912467517713176}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 41.561, y: 221.93, z: 30.79}
 --- !u!95 &8995113365077000384
 Animator:
   serializedVersion: 4
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   followDistance: 20
-  attackDistance: 1
+  attackDistance: 3
   speed: 1
   health: 3
   damage: 1
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 9045505439065250562}
   m_Layer: 0
   m_Name: RigLEar
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 9049585676133187534}
   m_Layer: 0
   m_Name: RigHead
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 9049894637484282350}
   m_Layer: 0
   m_Name: RigNeck
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 9049504512961438784}
   m_Layer: 0
   m_Name: RigTail3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 9045647113932057464}
   m_Layer: 0
   m_Name: RigRibCage
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 9049615537282072054}
   m_Layer: 0
   m_Name: RigLArm2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 9045849531536913684}
   m_Layer: 0
   m_Name: RigLArmCollarbone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 9045885335647304184}
   m_Layer: 0
   m_Name: RigLArmPalm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 9049827835192046172}
   m_Layer: 0
   m_Name: RigRArmPalm
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 9049556768116220138}
   m_Layer: 0
   m_Name: RigTail1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,10 +565,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9045587367353026576}
   - component: {fileID: 8966578871656870012}
-  - component: {fileID: 8966578871656870013}
   m_Layer: 0
   m_Name: MonsterBat
-  m_TagString: Bat
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -662,19 +661,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.22886999, y: -0.11203763, z: 0.0000010728836}
     m_Extent: {x: 0.33025372, y: 0.26203778, z: 0.7476003}
   m_DirtyAABB: 0
---- !u!65 &8966578871656870013
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9044262107452906010}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4952009, y: 0.7627484, z: 0.660508}
-  m_Center: {x: -0.00000006287513, y: -0.0073013683, z: 0.19359437}
 --- !u!1 &9044335697290855576
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +672,7 @@ GameObject:
   - component: {fileID: 9049678168634714452}
   m_Layer: 0
   m_Name: RigLLeg
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,7 +703,7 @@ GameObject:
   - component: {fileID: 9049653546913436044}
   m_Layer: 0
   m_Name: RigREar
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -748,7 +734,7 @@ GameObject:
   - component: {fileID: 9049619805009926866}
   m_Layer: 0
   m_Name: RigLArm1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -780,7 +766,7 @@ GameObject:
   - component: {fileID: 9049486048400283682}
   m_Layer: 0
   m_Name: RigRArm1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -810,9 +796,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9049912467517713176}
+  - component: {fileID: 1896127273}
   m_Layer: 0
   m_Name: RigPelvis
-  m_TagString: Bat
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -836,6 +823,19 @@ Transform:
   m_Father: {fileID: 9045481499568967194}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1896127273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9044715195237036068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9044726496180585034
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 9049779558669350912}
   m_Layer: 0
   m_Name: Rig
-  m_TagString: Bat
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 9049555032387123286}
   m_Layer: 0
   m_Name: RigSpine
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

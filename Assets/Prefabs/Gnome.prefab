@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 2781986013213222141}
   m_Layer: 0
   m_Name: Weapon02_LOD0
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,11 +539,10 @@ GameObject:
   - component: {fileID: 2854474741946681687}
   - component: {fileID: 2598810235543782595}
   - component: {fileID: 2598810235543782592}
-  - component: {fileID: 2598810235543782593}
-  - component: {fileID: 2598810235543782598}
+  - component: {fileID: 3687806348307023317}
   m_Layer: 0
   m_Name: Scripts
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,6 +561,7 @@ Transform:
   m_Children:
   - {fileID: 2799545436373130539}
   - {fileID: 2793985402946530615}
+  - {fileID: 2799243876273591699}
   m_Father: {fileID: 2794214482289157017}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -634,7 +634,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2598810235543782593
+--- !u!114 &3687806348307023317
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -643,20 +643,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2795690240251338829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62086a98eb2924043bebca2488861605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
---- !u!114 &2598810235543782598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795690240251338829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25695660db1894c45a4863b0ec0cf5f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 561f8abbbacfc6e4ea55b9c8073979a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
@@ -712,7 +699,7 @@ GameObject:
   - component: {fileID: 2599140187040788081}
   m_Layer: 0
   m_Name: Gnome01_Weapon
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -725,7 +712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2795714584944139101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.47, y: 0.496, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -733,8 +720,8 @@ Transform:
   - {fileID: 2799337116467769727}
   - {fileID: 2799425161460497673}
   - {fileID: 2794289283424831165}
-  m_Father: {fileID: 2794214482289157017}
-  m_RootOrder: 1
+  m_Father: {fileID: 2799293650896391959}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &2599140187040788081
 LODGroup:
@@ -997,10 +984,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2794100097444965981}
   - component: {fileID: 2823608864252188679}
-  - component: {fileID: 2823608864252188676}
   m_Layer: 0
   m_Name: Face_LOD0
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1079,19 +1065,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.31352174, y: 0.059239574, z: 0}
     m_Extent: {x: 0.35402775, y: 0.18234482, z: 0.16742237}
   m_DirtyAABB: 0
---- !u!65 &2823608864252188676
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795807423908076359}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.33484483, y: 0.7103755, z: 0.3692147}
-  m_Center: {x: -0.00000007038052, y: 0.62576926, z: 0.060508043}
 --- !u!1 &2795808993913454023
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,7 +1237,7 @@ GameObject:
   - component: {fileID: 2782300886753700729}
   m_Layer: 0
   m_Name: Weapon01_LOD0
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1376,10 +1349,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2794080220177724031}
   - component: {fileID: 2823252649947896729}
-  - component: {fileID: 2823252649947896734}
   m_Layer: 0
   m_Name: Buckle_LOD1
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1455,19 +1427,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.15404159, y: 0.13522837, z: 0}
     m_Extent: {x: 0.21782655, y: 0.051237006, z: 0.055973645}
   m_DirtyAABB: 0
---- !u!65 &2823252649947896734
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795851104632782451}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.111947306, y: 0.44569865, z: 0.1623498}
-  m_Center: {x: -0.0000000051447167, y: 0.38616937, z: 0.11237439}
 --- !u!1 &2795857419283365819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,10 +1532,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2799398001496088893}
   - component: {fileID: 2823463855973119207}
-  - component: {fileID: 2823463855973119204}
   m_Layer: 0
   m_Name: Face_LOD1
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1655,19 +1613,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.313522, y: 0.05768619, z: 0}
     m_Extent: {x: 0.35402808, y: 0.18004592, z: 0.16618548}
   m_DirtyAABB: 0
---- !u!65 &2823463855973119204
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795903813674356807}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.33237106, y: 0.7103467, z: 0.364617}
-  m_Center: {x: -0.00000007047329, y: 0.6257795, z: 0.058954697}
 --- !u!1 &2795907551763724845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,13 +1859,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2795969328697721211}
-  m_LocalRotation: {x: -0.40821788, y: 0.23456968, z: -0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: -1.627, z: 1.939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.578, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2799293650896391959}
-  - {fileID: 2799243876273591699}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1934,10 +1878,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2794330595011371437}
   - component: {fileID: 2823248516962975417}
-  - component: {fileID: 2823248516962975422}
   m_Layer: 0
   m_Name: Body_LOD1
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2062,19 +2005,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.03976366, y: -0.055864394, z: -0.000004798174}
     m_Extent: {x: 0.2835094, y: 0.25183874, z: 0.575086}
   m_DirtyAABB: 0
---- !u!65 &2823248516962975422
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2795976016171411171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.150172, y: 0.63184255, z: 0.5779744}
-  m_Center: {x: 0.000004783723, y: 0.24630809, z: -0.060873166}
 --- !u!1 &2795981541951278981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2081,7 @@ GameObject:
   - component: {fileID: 2794015164838106259}
   m_Layer: 0
   m_Name: Hips
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2347,7 +2277,7 @@ GameObject:
   - component: {fileID: 2793985402946530615}
   m_Layer: 0
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2379,10 +2309,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2799436427765261929}
   - component: {fileID: 2819273962909987821}
-  - component: {fileID: 2819273962909987810}
   m_Layer: 0
   m_Name: Buckle_LOD0
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2458,19 +2387,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.15448998, y: 0.13529459, z: -0.0000000037252903}
     m_Extent: {x: 0.21830796, y: 0.05130808, z: 0.05597364}
   m_DirtyAABB: 0
---- !u!65 &2819273962909987810
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2796056095666617097}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1119473, y: 0.44667187, z: 0.1626251}
-  m_Center: {x: -0.000000001422233, y: 0.3866226, z: 0.11237729}
 --- !u!1 &2796105803003171339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2398,7 @@ GameObject:
   - component: {fileID: 2794044770697421459}
   m_Layer: 0
   m_Name: fp_footcenter
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2675,7 +2591,7 @@ GameObject:
   - component: {fileID: 2782592568812883997}
   m_Layer: 0
   m_Name: Weapon01_LOD1
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2754,9 +2670,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2799545436373130539}
+  - component: {fileID: 1581964034382715105}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2769,8 +2686,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2796462580508050171}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 0.437, z: 0}
+  m_LocalScale: {x: 0.58934, y: 0.75869, z: 0.4765}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2799343312869149313}
@@ -2782,6 +2699,19 @@ Transform:
   m_Father: {fileID: 2799293650896391959}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1581964034382715105
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796462580508050171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2796465473897987201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,10 +2753,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2799343312869149313}
   - component: {fileID: 2819553306193694553}
-  - component: {fileID: 2819553306193694558}
   m_Layer: 0
   m_Name: Body_LOD0
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2951,19 +2880,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.03960368, y: -0.05672223, z: -0.000003606081}
     m_Extent: {x: 0.2853873, y: 0.25098103, z: 0.57496095}
   m_DirtyAABB: 0
---- !u!65 &2819553306193694558
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2796475497087814269}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1499219, y: 0.63532174, z: 0.57680064}
-  m_Center: {x: 0.0000035915834, y: 0.24602981, z: -0.061700225}
 --- !u!1 &2796478919669746251
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,7 +3597,7 @@ GameObject:
   - component: {fileID: 2782535410834525761}
   m_Layer: 0
   m_Name: Weapon02_LOD1
-  m_TagString: Untagged
+  m_TagString: Gnome
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

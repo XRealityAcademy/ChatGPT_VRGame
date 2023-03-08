@@ -9,7 +9,7 @@ TagManager:
   - Hand
   - Bat
   - Bullet
-  - Gnome
+  - Enemy
   layers:
   - Default
   - TransparentFX
